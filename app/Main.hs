@@ -13,4 +13,4 @@ main = do
      manager <- newManager $ tlsManagerSettings { managerResponseTimeout = responseTimeoutMicro deffaultTimeout}
      runResourceT $ do
          response <- http request manager
-         runConduit $ responseBody response .| sinkFile "google.html"
+         runConduit $ responseBody response .| sinkFile "result.json"
